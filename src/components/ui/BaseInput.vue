@@ -106,6 +106,14 @@ const handleInput = event => {
   border-radius: 4px;
   padding-right: 30px;
 
+  &__field-wrapper {
+    flex: 1;
+  }
+
+  &__field {
+    height: 100%;
+  }
+
   &__input {
     background: transparent;
     border: none;
@@ -113,6 +121,7 @@ const handleInput = event => {
     font-size: 12px;
     color: #B6BFF3;
     width: 100%;
+    height: 100%;
   }
 
   &__long {
@@ -130,6 +139,8 @@ const handleInput = event => {
     left: 7px;
     color: #B6BFF3;
     font-size: 14px;
+    top: 50%;
+    transform: translateY(-50%);
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
@@ -137,7 +148,7 @@ const handleInput = event => {
     pointer-events: none;
 
     &.focused {
-      transform: translateY(-20px);
+      transform: translateY(-30px);
       font-size: 12px !important;
       background: $white;
       border-radius: 4px;
@@ -154,6 +165,7 @@ const handleInput = event => {
   }
 
   &__icon {
+    width: fit-content;
     position: absolute;
     right: 8px;
     top: 50%;

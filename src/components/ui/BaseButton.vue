@@ -1,7 +1,7 @@
 <template>
-  <button :class="[mainClass]">
+  <component :is="tag" :class="[mainClass]">
     <slot />
-  </button>
+  </component>
 </template>
 
 <script setup>
@@ -11,6 +11,10 @@ const props = defineProps({
   variant: {
     type: String,
     default: 'default'
+  },
+  tag: {
+    type: String,
+    default: 'button'
   }
 })
 

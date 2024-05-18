@@ -38,3 +38,20 @@ export const ORDER_FORM = ref({
         long: true
     }
 })
+
+export const CALLBACK_FORM = ref({
+    name: {
+        key: 'name',
+        label: 'inputs.name.label',
+        value: '',
+        error: '',
+        valid: true
+    },
+    contact: {
+        key: 'contact',
+        label: 'inputs.contact.label',
+        value: '',
+        error: '',
+        valid: true
+    }
+})

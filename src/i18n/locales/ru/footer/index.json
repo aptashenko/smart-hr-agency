@@ -1,5 +1,5 @@
 {
-  "title": "Контакты",
+  "title": "Обратная связь",
   "telegram_bot": {
     "name": "Telegram bot",
     "label": "SMPGMbot",
@@ -31,5 +31,5 @@
       "link": "https://www.threads.net/@smarthr_agency"
     }
   ],
-  "cta": "Заполнить форму"
+  "cta": "Заказать звонок"
 }

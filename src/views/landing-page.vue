@@ -1,9 +1,9 @@
 <template>
   <div class="landing-page">
     <the-hero />
-    <the-proposals />
-    <the-work-areas />
-    <how-we-work />
+    <the-work-areas id="areas" />
+    <the-proposals id="coop" />
+    <how-we-work id="steps" />
     <the-products />
   </div>
 </template>

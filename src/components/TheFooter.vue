@@ -1,7 +1,17 @@
 <template>
   <footer class="the-footer">
     <div class="the-footer__wrapper">
-      <base-button class="the-footer__cta">{{$t('footer.cta')}}</base-button>
+      <div class="the-footer__callback">
+        <h2 class="the-footer__title">
+          {{$t('footer.title')}}
+        </h2>
+        <form-default
+            id="callback"
+            :form-data="CALLBACK_FORM"
+            :cta-label="$t('footer.cta')"
+            class="the-footer__form"
+        />
+      </div>
       <div class="the-footer__contacts">
         <div class="the-footer__item">
           <p>
@@ -33,6 +43,8 @@
 
 <script setup>
 
+import FormDefault from "@/components/forms/FormDefault.vue";
+import {CALLBACK_FORM} from "@/forms/index.js";
 </script>
 
 <style lang="scss">
@@ -41,18 +53,32 @@
   padding: 40px 0;
   color: $white;
 
+  &__title {
+    font-size: 36px;
+    font-weight: 900;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
   &__wrapper {
     @include container;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
   }
 
   &__contacts {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    grid-column: span 2 / span 2;
+    justify-content: flex-end;
     gap: 8px;
+
+    @media (max-width: 768px) {
+      margin-top: 60px;
+    }
   }
 
   &__item {
@@ -94,10 +120,43 @@
     }
   }
 
-  &__cta {
-    width: 50%;
-    height: fit-content;
-    margin: auto;
+  &__callback {
+    grid-column: span 2 / span 2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    & form {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 10px;
+      flex: 1;
+      height: 100%;
+
+      & .base-input-field {
+        width: 100%;
+        margin: 0 !important;
+        height: 42px;
+      }
+    }
+
+    & button {
+      flex-shrink: 0;
+      width: 170px;
+    }
   }
 }
 </style>

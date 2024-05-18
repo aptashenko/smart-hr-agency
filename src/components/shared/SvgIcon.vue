@@ -1,5 +1,6 @@
 <template>
   <component
+    class="svg-icon"
     :is="imgComponent"
   />
 </template>
@@ -22,3 +23,11 @@ const imgComponent = ref(defineAsyncComponent(() => {
   }
 }))
 </script>
+
+
+<style lang="scss">
+.svg-icon {
+  width: 100%;
+  height: 100%;
+}
+</style>

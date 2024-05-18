@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="default-form">
     <form
       :id="id"
       @submit.prevent="onSubmit"
@@ -12,7 +12,11 @@
         :label="$t(input.label)"
       />
     </form>
-    <base-button :form="id" type="submit" :disabled="!enableButton || disabledCta">
+    <base-button
+        :form="id"
+        type="submit"
+        :disabled="!enableButton || disabledCta"
+    >
       {{ctaLabel}}
     </base-button>
   </div>
@@ -67,3 +71,11 @@ const enableButton = computed(() => {
   return isEveryHasValue && isNoErrors
 })
 </script>
+
+<style lang="scss">
+.default-form {
+  & button {
+    width: 100%;
+  }
+}
+</style>

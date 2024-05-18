@@ -11,10 +11,10 @@
         </li>
       </ul>
       <div class="the-hero__actions">
-        <base-button>
+        <base-button @click="handleCta">
           {{$t('landing.hero.cta2')}}
         </base-button>
-        <base-button variant="inverse">
+        <base-button href="#areas" variant="inverse" tag="a">
           {{ $t('landing.hero.cta1') }}
         </base-button>
       </div>
@@ -30,6 +30,13 @@
 import BaseButton from "@/components/ui/BaseButton.vue";
 import BaseImage from "@/components/shared/BaseImage.vue";
 import SvgIcon from "@/components/shared/SvgIcon.vue";
+import {useModals} from "@/composables/useModals.js";
+import { POPUP_NAMES } from "@/components/modals/components/enums.js";
+
+const { openModal } = useModals()
+const handleCta = () => {
+  openModal(POPUP_NAMES.makeOrder)
+}
 </script>
 
 <style lang="scss">
@@ -41,10 +48,19 @@ import SvgIcon from "@/components/shared/SvgIcon.vue";
 
   padding: 40px 20px;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding-top: 20px;
+  }
+
   &__title {
     font-size: 48px;
     font-weight: 900;
     text-transform: uppercase;
+
+    @media (max-width: 768px) {
+      font-size: 35px;
+    }
   }
 
   &__subtitle {
@@ -55,11 +71,20 @@ import SvgIcon from "@/components/shared/SvgIcon.vue";
     display: flex;
     flex-direction: column;
     gap: 15px;
+
+    @media (max-width: 768px) {
+      order: 2;
+    }
   }
 
   &__image {
     flex-shrink: 0;
     width: 40% !important;
+
+    @media (max-width: 768px) {
+      width: 100% !important;
+      order: 1;
+    }
   }
 
   &__actions {
@@ -81,6 +106,8 @@ import SvgIcon from "@/components/shared/SvgIcon.vue";
     gap: 8px;
 
     & svg {
+      width: 20px;
+      height: 20px;
       flex-shrink: 0;
     }
 
