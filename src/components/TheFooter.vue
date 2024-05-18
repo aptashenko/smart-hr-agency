@@ -17,7 +17,7 @@
           <p>
             {{$t('footer.telegram_bot.name')}}:
           </p>
-          <a :href="$t('footer.telegram_bot.link')">
+          <a :href="$t('footer.telegram_bot.link')" target="_blank">
             {{$t('footer.telegram_bot.label')}}
           </a>
         </div>
@@ -31,7 +31,7 @@
         </div>
         <ul class="the-footer__social">
           <li v-for="item of $tm('footer.socials')">
-            <a :href="item.link">
+            <a :href="item.link" target="_blank">
               <svg-icon :name="item.id" />
             </a>
           </li>

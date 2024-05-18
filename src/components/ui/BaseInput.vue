@@ -118,7 +118,7 @@ const handleInput = event => {
     background: transparent;
     border: none;
     outline: none;
-    font-size: 12px;
+    font-size: 16px;
     color: #B6BFF3;
     width: 100%;
     height: 100%;
@@ -128,7 +128,7 @@ const handleInput = event => {
     background: transparent;
     border: none;
     outline: none;
-    font-size: 12px;
+    font-size: 16px;
     color: #B6BFF3;
     width: 100%;
     resize: none;
@@ -147,6 +147,11 @@ const handleInput = event => {
     transition: all .25s ease;
     pointer-events: none;
 
+    &.long {
+      top: unset;
+      transform: unset;
+    }
+
     &.focused {
       transform: translateY(-30px);
       font-size: 12px !important;
@@ -155,6 +160,10 @@ const handleInput = event => {
       padding: 2px 8px;
       line-height: 1;
       color: #41455D;
+
+      &.long {
+        transform: translateY(-15px);
+      }
 
       &.error {
         background: $error !important;
