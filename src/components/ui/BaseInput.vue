@@ -174,7 +174,6 @@ const handleInput = event => {
   }
 
   &__icon {
-    width: fit-content;
     position: absolute;
     right: 8px;
     top: 50%;
@@ -186,6 +185,9 @@ const handleInput = event => {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    width: 20px;
+    height: 20px;
   }
 
   &__error {

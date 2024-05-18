@@ -2,8 +2,10 @@
   <div class="the-hero">
     <div class="the-hero__left">
       <h1 class="the-hero__title">{{$t('landing.hero.title')}}</h1>
-      <p class="the-hero__subtitle">{{$t('landing.hero.subtitle1')}}</p>
-      <p class="the-hero__subtitle">{{$t('landing.hero.subtitle2')}}</p>
+      <div>
+        <p class="the-hero__subtitle">{{$t('landing.hero.subtitle1')}}</p>
+        <p class="the-hero__subtitle">{{$t('landing.hero.subtitle2')}}</p>
+      </div>
       <ul class="the-hero__list">
         <li v-for="item of $tm('landing.hero.benefits')" class="the-hero__item">
           <svg-icon name="check-circle" />
@@ -70,7 +72,7 @@ const handleCta = () => {
   &__left {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 24px;
 
     @media (max-width: 768px) {
       order: 2;

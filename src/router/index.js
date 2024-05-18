@@ -9,6 +9,16 @@ const router = createRouter({
       name: 'home',
       component: LandingPage
     },
+    {
+      path: '/something-wrong',
+      name: 'error',
+      component: () => import('@/views/error-page.vue')
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'error',
+      component: () => import('@/views/error-page.vue')
+    }
   ]
 })
 

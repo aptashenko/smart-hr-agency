@@ -13,7 +13,12 @@
           {{$t('landing.proposals.specialists.description')}}
         </p>
         <hr/>
-        <base-button class="the-proposals__cta" @click="handleCta">
+        <base-button
+            tag="a"
+            :href="$t('footer.telegram_bot.link')"
+            target="_blank"
+            class="the-proposals__cta"
+        >
           {{$t('landing.proposals.specialists.cta')}}
         </base-button>
       </div>
@@ -108,6 +113,7 @@ const handleCta = () => {
   &__cta {
     margin-top: 10px;
     width: 100%;
+    text-align: center;
   }
 }
 </style>

@@ -1,11 +1,15 @@
 <template>
-  <component :is="tag" :class="[mainClass]">
+  <component
+    :is="to ? RouterLink : tag"
+    :class="[mainClass]"
+    :to="to ? to : null">
     <slot />
   </component>
 </template>
 
 <script setup>
 import {computed} from "vue";
+import {RouterLink} from "vue-router";
 
 const props = defineProps({
   variant: {
@@ -15,6 +19,9 @@ const props = defineProps({
   tag: {
     type: String,
     default: 'button'
+  },
+  to: {
+    type: [String, Object]
   }
 })
 
@@ -34,8 +41,17 @@ const mainClass = computed(() => ({
   transition: all .25s ease;
   border: 2px solid transparent;
 
+  &[disabled] {
+    background: $gray-200;
+    cursor: default;
+    color: $gray-500;
+  }
+
   &:hover {
     background: $primary-800;
+    &[disabled] {
+      background: $gray-200;
+    }
   }
 
   &:focus {

@@ -1,7 +1,7 @@
 {
   "title": "Обратная связь",
   "telegram_bot": {
-    "name": "Telegram bot",
+    "name": "Оставить свои данные в базе кандидатов",
     "label": "SMPGMbot",
     "link": "https://t.me/SMPGMbot"
   },

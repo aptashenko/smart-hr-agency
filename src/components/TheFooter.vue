@@ -10,17 +10,17 @@
             :form-data="CALLBACK_FORM"
             :cta-label="$t('footer.cta')"
             class="the-footer__form"
+            @on-submit="onSubmit"
         />
       </div>
       <div class="the-footer__contacts">
-        <div class="the-footer__item">
-          <p>
-            {{$t('footer.telegram_bot.name')}}:
-          </p>
-          <a :href="$t('footer.telegram_bot.link')" target="_blank">
-            {{$t('footer.telegram_bot.label')}}
-          </a>
-        </div>
+        <ul class="the-footer__social">
+          <li v-for="item of $tm('footer.socials')">
+            <a :href="item.link" target="_blank">
+              <svg-icon :name="item.id" />
+            </a>
+          </li>
+        </ul>
         <div class="the-footer__item">
           <p>
             {{$t('footer.email.name')}}:
@@ -29,13 +29,16 @@
             {{$t('footer.email.link')}}
           </a>
         </div>
-        <ul class="the-footer__social">
-          <li v-for="item of $tm('footer.socials')">
-            <a :href="item.link" target="_blank">
-              <svg-icon :name="item.id" />
-            </a>
-          </li>
-        </ul>
+        <div class="the-footer__item">
+          <base-button
+              tag="a"
+              :href="$t('footer.telegram_bot.link')"
+              target="_blank"
+              class="the-footer__telegram-bot"
+          >
+            {{$t('footer.telegram_bot.name')}}
+          </base-button>
+        </div>
       </div>
     </div>
   </footer>
@@ -45,6 +48,22 @@
 
 import FormDefault from "@/components/forms/FormDefault.vue";
 import {CALLBACK_FORM} from "@/forms/index.js";
+import telegramBotSend from "@/services/telegram-send.js";
+import {ref} from "vue";
+const payload = ref({});
+const keys = Object.keys(CALLBACK_FORM.value);
+keys.forEach(key => {
+  payload.value[key] = CALLBACK_FORM.value[key].value
+})
+const onSubmit = () => {
+  const keys = Object.keys(CALLBACK_FORM.value);
+  keys.forEach(key => {
+    payload.value[key] = CALLBACK_FORM.value[key].value
+  })
+  const { name, contact } = payload.value;
+  const orderMessage = `Свяжитесь со мной!%0AИмя: ${name}%0AКонтакт: ${contact}`;
+  telegramBotSend(orderMessage)
+}
 </script>
 
 <style lang="scss">
@@ -81,10 +100,22 @@ import {CALLBACK_FORM} from "@/forms/index.js";
     }
   }
 
+  &__telegram-bot {
+    color: $white !important;
+    text-decoration: none !important;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      width: 100%;
+    }
+  }
+
   &__item {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 5px;
+    width: 100%;
 
     & a {
       color: #1E90FF;

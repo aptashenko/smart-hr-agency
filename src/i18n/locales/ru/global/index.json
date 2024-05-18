@@ -1,0 +1,11 @@
+{
+  "to_main": "На главную",
+  "notification_bars": {
+    "success": {
+      "order_sent": {
+        "title": "Спасибо!",
+        "message": "Ваше сообщение отправлено"
+      }
+    }
+  }
+}
