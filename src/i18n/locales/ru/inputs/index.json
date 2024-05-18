@@ -1,0 +1,42 @@
+{
+  "name": {
+    "label": "Ваше имя",
+    "validation": {
+      "minLength": "Имя слишком короткое!",
+      "maxLength": "Имя слишком длинное!",
+      "required": "Имя обязательно"
+    }
+  },
+  "surname": {
+    "label": "Ваша фамилия",
+    "validation": {
+      "minLength": "Фамилия слишком короткая!",
+      "maxLength": "Фамилия слишком длинная!",
+      "required": "Фамилия обязательна"
+    }
+  },
+  "position": {
+    "label": "Ваша должность",
+    "validation": {
+      "minLength": "Слишком короткое название",
+      "maxLength": "Слишком длинное название",
+      "required": "Должность обязательна"
+    }
+  },
+  "contact": {
+    "label": "Контакт telegram",
+    "validation": {
+      "minLength": "Слишком короткое",
+      "maxLength": "Слишком длинное",
+      "required": "Контакт обязателен"
+    }
+  },
+  "message": {
+    "label": "Опишите ваш запрос",
+    "validation": {
+      "minLength": "Слишком короткое описание",
+      "maxLength": "Слишком длинное описание",
+      "required": "Описание обязательно"
+    }
+  }
+}

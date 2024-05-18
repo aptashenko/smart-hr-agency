@@ -1,0 +1,35 @@
+{
+  "title": "Контакты",
+  "telegram_bot": {
+    "name": "Telegram bot",
+    "label": "SMPGMbot",
+    "link": "https://t.me/SMPGMbot"
+  },
+  "email": {
+    "name": "Email",
+    "link": "example{'@'}gmail.com"
+  },
+  "socials": [
+    {
+      "id": "linkedin",
+      "link": "https://www.linkedin.com/groups/9823042/"
+    },
+    {
+      "id": "instagram",
+      "link": "https://www.instagram.com/smarthr_agency/"
+    },
+    {
+      "id": "telegram",
+      "link": "https://t.me/smart_hragency"
+    },
+    {
+      "id": "x",
+      "link": "https://twitter.com/SmartHRagency"
+    },
+    {
+      "id": "threads",
+      "link": "https://www.threads.net/@smarthr_agency"
+    }
+  ],
+  "cta": "Заполнить форму"
+}
