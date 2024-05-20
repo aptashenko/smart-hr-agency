@@ -10,7 +10,7 @@
 </template>
 <script setup>
 import FormDefault from "@/components/forms/FormDefault.vue";
-import {ORDER_FORM} from "@/forms/index.js";
+import {ORDER_FORM, resetOrderForm} from "@/forms/index.js";
 import {ref} from "vue";
 import telegramBotSend from "@/services/telegram-send.js";
 import {useModals} from "@/composables/useModals.js";
@@ -40,6 +40,7 @@ const onSubmit = async () => {
     open(NOTIFICATIONS_NAMES.success, {title: t('global.notification_bars.success.order_sent.title'), text: t('global.notification_bars.success.order_sent.message')})
   }
   else router.push({name: 'error'})
+  resetOrderForm()
 }
 </script>
 

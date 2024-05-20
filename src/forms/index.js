@@ -1,6 +1,5 @@
 import {ref} from "vue";
-
-export const ORDER_FORM = ref({
+export const DEFAULT_ORDER_FORM = {
     name: {
         key: 'name',
         label: 'inputs.name.label',
@@ -37,9 +36,9 @@ export const ORDER_FORM = ref({
         valid: true,
         long: true
     }
-})
+}
 
-export const CALLBACK_FORM = ref({
+export const DEFAULT_CALLBACK_FORM = {
     name: {
         key: 'name',
         label: 'inputs.name.label',
@@ -54,4 +53,23 @@ export const CALLBACK_FORM = ref({
         error: '',
         valid: true
     }
+}
+export const ORDER_FORM = ref({
+    name: {...DEFAULT_ORDER_FORM.name},
+    surname: {...DEFAULT_ORDER_FORM.surname},
+    position: {...DEFAULT_ORDER_FORM.position},
+    contact: {...DEFAULT_ORDER_FORM.contact},
+    message: {...DEFAULT_ORDER_FORM.message}
 })
+
+export const CALLBACK_FORM = ref({
+    name: {...DEFAULT_CALLBACK_FORM.name},
+    contact: {...DEFAULT_CALLBACK_FORM.contact}
+})
+
+export const resetOrderForm = () => {
+    ORDER_FORM.value = DEFAULT_ORDER_FORM
+}
+export const resetCallbackForm = () => {
+    CALLBACK_FORM.value = DEFAULT_CALLBACK_FORM
+}

@@ -47,22 +47,34 @@
 <script setup>
 
 import FormDefault from "@/components/forms/FormDefault.vue";
-import {CALLBACK_FORM} from "@/forms/index.js";
+import {CALLBACK_FORM, resetCallbackForm} from "@/forms/index.js";
 import telegramBotSend from "@/services/telegram-send.js";
 import {ref} from "vue";
+import {NOTIFICATIONS_NAMES} from "@/components/notifications/components/enums.js";
+import {useRouter} from "vue-router";
+import {useNotification} from "@/composables/useNotification.js";
+import {useI18n} from "vue-i18n";
 const payload = ref({});
 const keys = Object.keys(CALLBACK_FORM.value);
 keys.forEach(key => {
   payload.value[key] = CALLBACK_FORM.value[key].value
 })
-const onSubmit = () => {
+const router = useRouter()
+const { open } = useNotification();
+const { t } = useI18n()
+const onSubmit = async () => {
   const keys = Object.keys(CALLBACK_FORM.value);
   keys.forEach(key => {
     payload.value[key] = CALLBACK_FORM.value[key].value
   })
   const { name, contact } = payload.value;
   const orderMessage = `Свяжитесь со мной!%0AИмя: ${name}%0AКонтакт: ${contact}`;
-  telegramBotSend(orderMessage)
+  const status = await telegramBotSend(orderMessage)
+  if (status === 200) {
+    open(NOTIFICATIONS_NAMES.success, {title: t('global.notification_bars.success.order_sent.title'), text: t('global.notification_bars.success.order_sent.message')})
+  }
+  else router.push({name: 'error'})
+  resetCallbackForm()
 }
 </script>
 
@@ -83,6 +95,7 @@ const onSubmit = () => {
     @include container;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
     @media (max-width: 768px) {
       grid-template-columns: repeat(1, minmax(0, 1fr));
     }
@@ -103,6 +116,8 @@ const onSubmit = () => {
   &__telegram-bot {
     color: $white !important;
     text-decoration: none !important;
+    width: fit-content !important;
+    text-align: center;
 
     @media (max-width: 768px) {
       font-size: 14px;
@@ -186,7 +201,7 @@ const onSubmit = () => {
 
     & button {
       flex-shrink: 0;
-      width: 170px;
+      width: 180px;
     }
   }
 }
