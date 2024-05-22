@@ -1,0 +1,35 @@
+{
+  "title": "Contacto",
+  "telegram_bot": {
+    "name": "Quiero dejar mis datos en la base de candidatos",
+    "label": "SMPGMbot",
+    "link": "https://t.me/SMPGMbot"
+  },
+  "email": {
+    "name": "Email",
+    "link": "hello{'@'}smarthr.agency"
+  },
+  "socials": [
+    {
+      "id": "linkedin",
+      "link": "https://www.linkedin.com/groups/9823042/"
+    },
+    {
+      "id": "instagram",
+      "link": "https://www.instagram.com/smarthr_agency/"
+    },
+    {
+      "id": "telegram",
+      "link": "https://t.me/smart_hragency"
+    },
+    {
+      "id": "x",
+      "link": "https://twitter.com/SmartHRagency"
+    },
+    {
+      "id": "threads",
+      "link": "https://www.threads.net/@smarthr_agency"
+    }
+  ],
+  "cta": "Enviar la solicitud"
+}

@@ -1,0 +1,13 @@
+{
+  "to_main": "Ir a la página principal",
+  "notification_bars": {
+    "success": {
+      "order_sent": {
+        "title": "¡Gracias!",
+        "message": "Su mensaje ha sido enviado"
+      }
+    }
+  },
+  "document_title": "SMART HR AGENCY",
+  "language": "Idioma:"
+}

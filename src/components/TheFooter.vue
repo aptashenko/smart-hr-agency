@@ -201,7 +201,7 @@ const onSubmit = async () => {
 
     & button {
       flex-shrink: 0;
-      width: 180px;
+      max-width: 205px;
     }
   }
 }

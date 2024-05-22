@@ -5,5 +5,5 @@ export default createI18n({
     fallback: import.meta.env.VITE_FALLBACK_LOCALE,
     globalInjection: true,
     legacy: false,
-    messages: { ru },
+    messages: { ru }
 })

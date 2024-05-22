@@ -1,0 +1,13 @@
+{
+  "to_main": "To main",
+  "notification_bars": {
+    "success": {
+      "order_sent": {
+        "title": "Thank you!",
+        "message": "Your message has been sent"
+      }
+    }
+  },
+  "document_title": "SMART HR AGENCY",
+  "language": "Language:"
+}

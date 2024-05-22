@@ -10,6 +10,7 @@
       <base-button class="the-header__cta" @click="handleCta">
         {{$t('header.cta')}}
       </base-button>
+      <locale-changer />
     </div>
     <div class="the-header__mobile">
       <button class="the-header__burger">
@@ -23,6 +24,7 @@
 import TheLogo from "@/components/TheLogo.vue";
 import {useModals} from "@/composables/useModals.js";
 import { POPUP_NAMES } from "@/components/modals/components/enums.js";
+import LocaleChanger from "@/components/LocaleChanger.vue";
 
 const { openModal } = useModals()
 const handleCta = () => {
@@ -61,7 +63,6 @@ const links = ['#', '#coop', '#steps']
     list-style: none;
     gap: 20px;
     flex-grow: 1;
-    margin-left: 40px;
   }
 
   &__link {

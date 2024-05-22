@@ -12,12 +12,14 @@
           class="mobile-menu__link">{{link}}</a>
       </li>
     </ul>
+    <locale-changer class="mobile-menu__locales" />
   </div>
 </template>
 
 <script setup>
 import TheLogo from "@/components/TheLogo.vue";
 import {useModals} from "@/composables/useModals.js";
+import LocaleChanger from "@/components/LocaleChanger.vue";
 const { toggleComponent } = useModals()
 const links = ['#', '#coop', '#steps']
 </script>
@@ -35,6 +37,11 @@ const links = ['#', '#coop', '#steps']
     list-style: none;
     margin-top: 32px;
     gap: 8px;
+  }
+
+  &__locales {
+    width: fit-content;
+    margin-top: 24px;
   }
 
   &__link {

@@ -1,0 +1,90 @@
+{
+  "hero": {
+    "title": "Smart HR Agency",
+    "subtitle1": "Smart HR Agency es una agencia de contratación única, fundada por profesionales del sector informático con 20 años de experiencia en el diseño y desarrollo de grandes proyectos de Internet. La agencia forma parte del holding internacional ABC Group.",
+    "subtitle2": "Nuestra labor se basa en el enfoque SMART, la automatización y la optimización de procesos. Estamos orientados a los resultados y tenemos especial experiencia en las áreas de desarrollo, soporte, ventas, marketing digital, rendimiento y marketing de afiliación.",
+    "benefits": [
+      "Llevamos 7 años buscando profesionales para nuestras propias necesidades.",
+      "Adoptamos una visión global del negocio.",
+      "Creamos equipos multilingües.",
+      "Hablamos español, inglés y ruso.",
+      "Disponemos de más de 1000 CVs actualizados en nuestra base de datos.",
+      "Mantenemos una red de contactos internacionales.",
+      "Desarrollamos nuestra propia comunidad de especialistas en RRHH."
+    ],
+    "cta1": "Más detalles",
+    "cta2": "Enviar la solicitud"
+  },
+  "proposals": {
+    "title": "Qué ofrecemos",
+    "specialists": {
+      "title": "Para los profesionales",
+      "description": "Te ayudaremos a maximizar tu potencial encontrando un empleo que se ajuste a tu experiencia, competencias, personalidad y objetivos profesionales. Ofrecemos consultas gratuitas sobre desarrollo, formación y asesoramiento profesional.",
+      "cta": "¡Adelante!"
+    },
+    "companies": {
+      "title": "Para las empresas",
+      "description": "Resolveremos los problemas de personal de vuestro negocio y os ofreceremos garantías. La comodidad del servicio, la eficacia y calidad, y la satisfacción al trabajar con nosotros son los principales criterios para evaluar el éxito de nuestro negocio.",
+      "cta": "Hacer la solicitud"
+    },
+    "partners": {
+      "title": "Para los socios",
+      "description": "Las agencias de contratación de personal, los profesionales y autónomos, los directores y ejecutivos de RRHH, los reclutadores, y los propietarios de grupos y comunidades de cualquier sector podéis aumentar vuestros ingresos cooperando con Smart HR Agency.",
+      "cta": "Hacerse socio"
+    }
+  },
+  "work_areas": {
+    "title": "Principales áreas de trabajo",
+    "managers": {
+      "title": "Directivos",
+      "list": ["C-Level", "Directors", "Team Leaders"]
+    },
+
+    "developers": {
+      "title": "Desarrolladores",
+      "list": ["PHP", "Python", "JS", "Node.JS", "React"]
+    },
+
+    "digit_marketing": {
+      "title": "Marketing Digital y de Rendimiento",
+      "list": ["User Acquisition", "SMM"]
+    },
+
+    "aff_marketing": {
+      "title": "Marketing de Afiliación",
+      "list": ["Media Buyer", "Account Manager", "Motion Designer", "UI/UX designer"]
+    },
+    "business_dev": {
+      "title": "Desarrollo de Negocios",
+      "list": ["PR", "Sales", "SMM", "SEO"]
+    }
+  },
+  "how_we_work": {
+    "title": "Cómo trabajamos",
+    "step1": "Averiguamos todos los detalles sobre el especialista que necesitáis.",
+    "step2": "Buscamos, entrevistamos y coordinamos a los candidatos.",
+    "step3": "Os facilitamos los contactos de los candidatos adecuados.",
+    "step4": "El candidato adecuado supera el periodo de prueba.",
+    "step5": "Al final del periodo de prueba exitoso, pagáis por nuestros servicios."
+  },
+  "prices": {
+    "title": "Presupuesto para nuestros servicios",
+    "list": [
+      {
+        "title": "Sueldo hasta {count_1}:",
+        "cost": "{cost_1} del sueldo"
+      },
+      {
+        "title": "Sueldo de {count_1} a {count_2}:",
+        "cost": "{cost_2} del sueldo"
+      },
+      {
+        "title": "Sueldo de {count_2} y más:",
+        "cost": "{cost_3} del sueldo"
+      }
+    ],
+    "discount": "Descuento por pago anticipado del {discount}%",
+    "guarantee": "Garantías de {count} meses a partir del momento de incorporación a la empresa.",
+    "cta": "Enviar la solicitud"
+  }
+}

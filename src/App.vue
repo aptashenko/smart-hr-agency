@@ -20,9 +20,12 @@ import {useModals} from "@/composables/useModals.js";
 import ModalComponent from "@/components/modals/ModalComponent.vue";
 import {useNotification} from "@/composables/useNotification.js";
 import BaseNotification from "@/components/notifications/BaseNotification.vue";
+import {useSwitchLanguage} from "@/composables/useSwitchLanguage.js";
 const { globalModalState } = useModals();
 const { globalNotification } = useNotification();
+const { switchLanguage } = useSwitchLanguage();
 
+switchLanguage()
 </script>
 
 <style lang="scss">

@@ -1,0 +1,42 @@
+{
+  "name": {
+    "label": "Nombre",
+    "validation": {
+      "minLength": "¡El nombre es demasiado corto!",
+      "maxLength": "¡El nombre es demasiado largo!",
+      "required": "El nombre es obligatorio"
+    }
+  },
+  "surname": {
+    "label": "Apellido",
+    "validation": {
+      "minLength": "¡El apellido es demasiado corto!",
+      "maxLength": "¡El apellido es demasiado largo!",
+      "required": "El apellido es obligatorio"
+    }
+  },
+  "position": {
+    "label": "Cargo",
+    "validation": {
+      "minLength": "El cargo es demasiado corto",
+      "maxLength": "El cargo es demasiado largo",
+      "required": "El cargo es obligatorio"
+    }
+  },
+  "contact": {
+    "label": "Contacto de Telegram",
+    "validation": {
+      "minLength": "Demasiado corto",
+      "maxLength": "Demasiado largo",
+      "required": "El contacto es obligatorio"
+    }
+  },
+  "message": {
+    "label": "Describe tu solicitud",
+    "validation": {
+      "minLength": "Descripción demasiado corta",
+      "maxLength": "Descripción demasiado larga",
+      "required": "La descripción es obligatoria"
+    }
+  }
+}

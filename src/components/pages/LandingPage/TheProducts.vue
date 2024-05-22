@@ -10,6 +10,15 @@
       >
         <h2 class="the-products__label">{{$rt(card.title, {count_1: '$1000', count_2: '$3000'})}}</h2>
         <p class="the-products__cost">{{$rt(card.cost, {cost_1: '100%', cost_2: '200%', cost_3: '250%'})}}</p>
+        <hr />
+        <ul>
+          <li>
+            <p>{{$t('landing.prices.discount', {discount: 15})}}</p>
+          </li>
+          <li>
+            <p>{{$t('landing.prices.guarantee', {count: 3})}}</p>
+          </li>
+        </ul>
         <base-button class="the-products__cta" @click="handleCta">
           {{$t('landing.prices.cta')}}
         </base-button>
@@ -62,6 +71,14 @@ const handleCta = () => {
 
     border: 1px solid $gray-200;
     border-radius: 8px;
+
+    & hr {
+      width: 100%;
+    }
+
+    & ul {
+      padding: 0 30px;
+    }
   }
 
   &__cta {

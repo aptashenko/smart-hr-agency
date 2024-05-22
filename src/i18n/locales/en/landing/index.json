@@ -1,0 +1,90 @@
+{
+  "hero": {
+    "title": "Smart HR Agency",
+    "subtitle1": "Smart HR Agency is a unique recruitment agency created by IT professionals with 20 years of experience in the development of large Internet projects. The agency is a part of the international holding ABC Group.",
+    "subtitle2": "Our work is based on the SMART approach, automation, and optimization of processes. We are result-oriented and are particularly experienced in development, support, sales, digital marketing, performance marketing, and affiliate marketing.",
+    "benefits": [
+      "We have been recruiting for 7 years for our company",
+      "We look at business from a holistic perspective",
+      "We create multi-lingual teams",
+      "We speak Russian, English, Español",
+      "We have 1000+ relevant CVs in our database",
+      "We maintain a network of international connections",
+      "We are growing our own community of HR specialists"
+    ],
+    "cta1": "Details",
+    "cta2": "Submit an application"
+  },
+  "proposals": {
+    "title": "What we offer",
+    "specialists": {
+      "title": "To specialists",
+      "description": "We can help you maximize your potential by finding a job that is relevant to your experience, competencies, personality, and life goals. We provide free development, education, and career consulting.",
+      "cta": "Up!"
+    },
+    "companies": {
+      "title": "To companies",
+      "description": "We will solve your recruitment issues and offer guarantees for our services. The convenience, efficiency, and quality of our service, along with your satisfaction in working with us, are the primary benchmarks for evaluating the success of our business.",
+      "cta": "Book services"
+    },
+    "partners": {
+      "title": "To partners",
+      "description": "HR and recruiting agencies, specialists, freelancers, HR managers, executives, recruiters, and owners of groups and communities across various subjects can boost their income by partnering with SmartHR Agency.",
+      "cta": "Become a partner"
+    }
+  },
+  "work_areas": {
+    "title": "Our primary areas of work",
+    "managers": {
+      "title": "Management",
+      "list": ["C-Level", "Directors", "Team Leaders"]
+    },
+
+    "developers": {
+      "title": "Development",
+      "list": ["PHP", "Python", "JS", "Node.JS", "React"]
+    },
+
+    "digit_marketing": {
+      "title": "Digital & Performance Marketing",
+      "list": ["User Acquisition", "SMM"]
+    },
+
+    "aff_marketing": {
+      "title": "Affiliate Marketing",
+      "list": ["Media Buyer", "Account Manager", "Motion Designer", "UI/UX designer"]
+    },
+    "business_dev": {
+      "title": "Business Development",
+      "list": ["PR", "Sales", "SMM", "SEO"]
+    }
+  },
+  "how_we_work": {
+    "title": "How we work",
+    "step1": "We learn all the details about the candidate you are looking for",
+    "step2": "We search, interview, and test potential candidates",
+    "step3": "We provide you with the contact information of suitable candidates",
+    "step4": "The chosen candidate starts a probationary period",
+    "step5": "At the end of the probationary period, you pay for our services"
+  },
+  "prices": {
+    "title": "Cost of services",
+    "list": [
+      {
+        "title": "Salary up to {count_1}:",
+        "cost": "{cost_1} of salary"
+      },
+      {
+        "title": "Salary from {count_1} to {count_2}:",
+        "cost": "{cost_2} of salary"
+      },
+      {
+        "title": "Salary from {count_2} and above:",
+        "cost": "{cost_3} of salary"
+      }
+    ],
+    "discount": "discount: prepayment - {discount}%",
+    "guarantee": "guarantee: {count} months from the employee's start date",
+    "cta": "Submit an application"
+  }
+}

@@ -27,3 +27,14 @@
 .slide-notification-leave-to {
     transform: translate(-50%, 150%);
 }
+
+.scale-enter-active,
+.scale-leave-active {
+    transition: all 0.5s ease;
+}
+
+.scale-enter-from,
+.scale-leave-to {
+    transform: scale(0.5);
+    opacity: 0;
+}
