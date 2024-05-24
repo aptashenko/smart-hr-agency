@@ -7,18 +7,15 @@ export const validationRules = {
             maxLength: maxLength(64)
         }
     },
-    surname: {
+    request: {
         value: {
-            required,
-            minLength: minLength(3),
-            maxLength: maxLength(20)
+            required
         }
     },
-    position: {
+    promo: {
         value: {
-            required,
-            minLength: minLength(2),
-            maxLength: maxLength(20)
+            minLength: minLength(1),
+            maxLength: maxLength(64)
         }
     },
     contact: {
@@ -30,7 +27,6 @@ export const validationRules = {
     },
     message: {
         value: {
-            required,
             minLength: minLength(3),
             maxLength: maxLength(1500)
         }

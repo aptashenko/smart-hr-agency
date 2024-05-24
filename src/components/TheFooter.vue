@@ -1,18 +1,6 @@
 <template>
   <footer class="the-footer">
     <div class="the-footer__wrapper">
-      <div class="the-footer__callback">
-        <h2 class="the-footer__title">
-          {{$t('footer.title')}}
-        </h2>
-        <form-default
-            id="callback"
-            :form-data="CALLBACK_FORM"
-            :cta-label="$t('footer.cta')"
-            class="the-footer__form"
-            @on-submit="onSubmit"
-        />
-      </div>
       <div class="the-footer__contacts">
         <ul class="the-footer__social">
           <li v-for="item of $tm('footer.socials')">
@@ -46,36 +34,6 @@
 
 <script setup>
 
-import FormDefault from "@/components/forms/FormDefault.vue";
-import {CALLBACK_FORM, resetCallbackForm} from "@/forms/index.js";
-import telegramBotSend from "@/services/telegram-send.js";
-import {ref} from "vue";
-import {NOTIFICATIONS_NAMES} from "@/components/notifications/components/enums.js";
-import {useRouter} from "vue-router";
-import {useNotification} from "@/composables/useNotification.js";
-import {useI18n} from "vue-i18n";
-const payload = ref({});
-const keys = Object.keys(CALLBACK_FORM.value);
-keys.forEach(key => {
-  payload.value[key] = CALLBACK_FORM.value[key].value
-})
-const router = useRouter()
-const { open } = useNotification();
-const { t } = useI18n()
-const onSubmit = async () => {
-  const keys = Object.keys(CALLBACK_FORM.value);
-  keys.forEach(key => {
-    payload.value[key] = CALLBACK_FORM.value[key].value
-  })
-  const { name, contact } = payload.value;
-  const orderMessage = `Свяжитесь со мной!%0AИмя: ${name}%0AКонтакт: ${contact}`;
-  const status = await telegramBotSend(orderMessage)
-  if (status === 200) {
-    open(NOTIFICATIONS_NAMES.success, {title: t('global.notification_bars.success.order_sent.title'), text: t('global.notification_bars.success.order_sent.message')})
-  }
-  else router.push({name: 'error'})
-  resetCallbackForm()
-}
 </script>
 
 <style lang="scss">
@@ -93,12 +51,7 @@ const onSubmit = async () => {
 
   &__wrapper {
     @include container;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px;
-    @media (max-width: 768px) {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
   }
 
   &__contacts {
@@ -163,45 +116,6 @@ const onSubmit = async () => {
           height: 100%;
         }
       }
-    }
-  }
-
-  &__callback {
-    grid-column: span 2 / span 2;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  &__form {
-    display: flex;
-    align-items: center;
-    flex: 1;
-    gap: 10px;
-    width: 100%;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-    }
-
-    & form {
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-      gap: 10px;
-      flex: 1;
-      height: 100%;
-
-      & .base-input-field {
-        width: 100%;
-        margin: 0 !important;
-        height: 42px;
-      }
-    }
-
-    & button {
-      flex-shrink: 0;
-      max-width: 205px;
     }
   }
 }

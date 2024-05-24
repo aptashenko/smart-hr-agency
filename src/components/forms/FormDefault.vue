@@ -4,20 +4,16 @@
       :id="id"
       @submit.prevent="onSubmit"
     >
-      <base-input
-        v-for="input of formData"
-        v-model="input.value"
-        :id="input.key"
-        :form="input"
-        :label="$t(input.label)"
+      <inputs
+        :data="formData"
       />
     </form>
     <base-button
-        :form="id"
-        type="submit"
-        :disabled="!enableButton || disabledCta"
+      :form="id"
+      type="submit"
+      :disabled="!enableButton"
     >
-      {{ctaLabel}}
+      {{buttonLabel}}
     </base-button>
   </div>
 </template>
@@ -26,7 +22,9 @@
 import {useFormValidate} from "@/composables/useFormValidate.js";
 import {computed} from "vue";
 import {validationRules} from "@/utils/validation/rules/index.js";
-import BaseInput from "@/components/ui/BaseInput.vue";
+import Inputs from "@/components/ui/inputs/index.vue";
+import {useI18n} from "vue-i18n";
+import {useRadioFormValue} from "@/composables/useRadioFormValue.js";
 
 const emit = defineEmits(['on-submit']);
 const props = defineProps({
@@ -45,8 +43,12 @@ const props = defineProps({
   disabledCta: {
     type: Boolean,
     default: false
-  },
+  }
 })
+const { t } = useI18n()
+const { isEmployee } = useRadioFormValue();
+
+const buttonLabel = computed(() => isEmployee.value ? t('footer.telegram_bot.name') : props.ctaLabel)
 
 const validationFormRules = computed(() => {
   const result = {};
@@ -60,16 +62,27 @@ const validationFormRules = computed(() => {
 
 const { validate } = useFormValidate(validationFormRules, props.formData)
 const onSubmit = async () => {
-  const isValid = await validate();
-  if(isValid) emit('on-submit')
+  if (isEmployee.value) {
+    const a = document.createElement('a');
+    a.href = t('footer.telegram_bot.link');
+    a.target="_blank"
+    a.click()
+  } else {
+    const isValid = await validate();
+    if(isValid) emit('on-submit')
+  }
 }
 
 const enableButton = computed(() => {
+  const entries = Object.entries(validationFormRules.value);
+  const requiredField = entries.filter(([_, {value}]) => value.required);
+  const requiredKeys = requiredField.map(item => item[0]);
+  const isEveryHasValue = requiredKeys.every(key => props.formData[key].value)
   const values = Object.values(props.formData);
-  const isEveryHasValue = values.every(item => item.value)
   const isNoErrors = values.every(item => !item.error)
-  return isEveryHasValue && isNoErrors
+  return isEveryHasValue && isNoErrors || isEmployee.value
 })
+
 </script>
 
 <style lang="scss">

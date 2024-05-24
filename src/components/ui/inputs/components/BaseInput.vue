@@ -1,56 +1,57 @@
 <template>
   <label
-      class="base-input-field"
-      :class="$attrs.class"
-      v-if="label"
+    class="base-input-field"
+    :class="$attrs.class"
+    v-if="label && !hidePromo"
+    :disabled="disabled"
   >
     <div class="base-input-field__field-wrapper">
       <div
-          class="base-input-field__field"
-          :class="[{error: form.error}, {focused: isFocused}]"
+        class="base-input-field__field"
+        :class="[{error: form.error}, {focused: isFocused}]"
       >
         <textarea
-            v-if="form.long"
-            :value="modelValue"
-            :maxlength="limit"
-            rows="5"
-            :placeholder="placeholder"
-            class="base-input-field__long"
-            @input="handleInput"
-            v-on:[focusEvent]="changeEvent"
+          v-if="form.long"
+          v-model="model"
+          :maxlength="limit"
+          rows="5"
+          :placeholder="placeholder"
+          class="base-input-field__long"
+          v-on:[focusEvent]="changeEvent"
         />
         <input
-            v-else
-            ref="input"
-            :placeholder="placeholder"
-            :value="modelValue"
-            class="base-input-field__input"
-            v-on:[event]="handleInput"
-            v-on:[focusEvent]="changeEvent"
+          v-else
+          ref="input"
+          :placeholder="placeholder"
+          v-model="model"
+          class="base-input-field__input"
+          v-on:[focusEvent]="changeEvent"
         >
         <template v-if="modelValue && !form.error">
-          <button class="base-input-field__icon" @click="clear">
+          <button
+            class="base-input-field__icon"
+            @click="clear">
             <svg-icon name="close" />
           </button>
         </template>
         <template v-if="form.error">
           <svg-icon
-              class="base-input-field__icon"
-              name="warning"
+            class="base-input-field__icon"
+            name="warning"
           />
         </template>
         <label
-            v-if="label"
-            class="base-input-field__label"
-            :class="[{focused: isFocused || modelValue}, {long: form.long}, {error: form.error}]"
+          v-if="label"
+          class="base-input-field__label"
+          :class="[{focused: isFocused || modelValue}, {long: form.long}, {error: form.error}]"
         >
-          {{label}}
+          {{$t(label)}}
         </label>
       </div>
     </div>
     <p
-        v-if="form.error"
-        class="base-input-field__error"
+      v-if="form.error"
+      class="base-input-field__error"
     >
       {{errorMessage}}
     </p>
@@ -59,7 +60,7 @@
 
 <script setup>
 
-import {computed, onMounted, ref} from "vue";
+import {computed, watch} from "vue";
 import {useFocusInput} from "@/composables/useFocusInput.js";
 import {useI18n} from "vue-i18n";
 import SvgIcon from "@/components/shared/SvgIcon.vue";
@@ -72,26 +73,25 @@ const props = defineProps({
   modelValue: {type: String, default: ''},
   event: {type: String, default: 'input'},
   limit: {type: Number, default: 99999},
+  hidePromo: {type: Boolean, default: true},
+  disabled: {type: Boolean, default: false}
 })
 const { t } = useI18n();
+const model = defineModel();
 const onFocus = () => {
   props.form.error = '';
   props.form.serverError = '';
 }
 const { isFocused, changeEvent, focusEvent } = useFocusInput({focus: onFocus})
 const clear = () => {
-  emit('update:modelValue', '')
+  model.value = ''
 }
 
+watch(() => props.disabled, (value) => {
+  clear()
+})
 
 const errorMessage = computed(() => t(`inputs.${props.form.key}.validation.${props.form.error}`))
-
-const emit = defineEmits([])
-
-const handleInput = event => {
-  const {value} = event.target;
-  emit('update:modelValue', value)
-}
 
 </script>
 
@@ -105,6 +105,25 @@ const handleInput = event => {
   padding: 7px;
   border-radius: 4px;
   padding-right: 30px;
+
+  transition: all .25s ease;
+
+  &[disabled=true] {
+    background: $gray-200;
+    pointer-events: none;
+
+    & input {
+      cursor: default;
+    }
+
+    & textarea {
+      cursor: default;
+    }
+
+    & label {
+      color: $gray-500;
+    }
+  }
 
   &__field-wrapper {
     flex: 1;
@@ -153,7 +172,7 @@ const handleInput = event => {
     }
 
     &.focused {
-      transform: translateY(-30px);
+      transform: translateY(-25px);
       font-size: 12px !important;
       background: $white;
       border-radius: 4px;
@@ -167,7 +186,7 @@ const handleInput = event => {
 
       &.error {
         background: $error !important;
-        color: black !important;
+        color: $white;
       }
 
     }
@@ -191,8 +210,14 @@ const handleInput = event => {
   }
 
   &__error {
-    color: $error;
     font-size: 10px;
+    position: absolute;
+    top: -8px;
+    right: 30px;
+    background: $error;
+    border-radius: 4px;
+    padding: 2px 4px;
+    color: white;
   }
 }
 </style>

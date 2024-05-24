@@ -13,7 +13,7 @@ export function useFocusInput ({focus, blur}) {
         let state;
         if (isFocused.value) {
             state = EVENT_ENUMS.focus
-            if (blur) blur()
+            if (blur) blur();
         } else {
             state = EVENT_ENUMS.blur;
             if (focus) focus()
