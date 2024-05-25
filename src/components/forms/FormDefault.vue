@@ -20,7 +20,7 @@
 
 <script setup>
 import {useFormValidate} from "@/composables/useFormValidate.js";
-import {computed} from "vue";
+import {computed, onBeforeUnmount} from "vue";
 import {validationRules} from "@/utils/validation/rules/index.js";
 import Inputs from "@/components/ui/inputs/index.vue";
 import {useI18n} from "vue-i18n";
@@ -81,6 +81,10 @@ const enableButton = computed(() => {
   const values = Object.values(props.formData);
   const isNoErrors = values.every(item => !item.error)
   return isEveryHasValue && isNoErrors || isEmployee.value
+})
+
+onBeforeUnmount(() => {
+  emit('reset-form')
 })
 
 </script>
