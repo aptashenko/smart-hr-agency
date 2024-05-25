@@ -1,5 +1,4 @@
 {
-  "title": "Feedback",
   "telegram_bot": {
     "name": "Leave your details in the candidate database",
     "label": "SMPGMbot",
@@ -30,6 +29,5 @@
       "id": "threads",
       "link": "https://www.threads.net/@smarthr_agency"
     }
-  ],
-  "cta": "Submit an application"
+  ]
 }

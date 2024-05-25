@@ -3,15 +3,6 @@
     "title": "Smart HR Agency",
     "subtitle1": "Smart HR Agency is a unique recruitment agency created by IT professionals with 20 years of experience in the development of large Internet projects. The agency is a part of the international holding ABC Group.",
     "subtitle2": "Our work is based on the SMART approach, automation, and optimization of processes. We are result-oriented and are particularly experienced in development, support, sales, digital marketing, performance marketing, and affiliate marketing.",
-    "benefits": [
-      "We have been recruiting for 7 years for our company",
-      "We look at business from a holistic perspective",
-      "We create multi-lingual teams",
-      "We speak Russian, English, Español",
-      "We have 1000+ relevant CVs in our database",
-      "We maintain a network of international connections",
-      "We are growing our own community of HR specialists"
-    ],
     "cta1": "Details",
     "cta2": "Submit an application"
   },
@@ -67,24 +58,16 @@
     "step4": "The chosen candidate starts a probationary period",
     "step5": "At the end of the probationary period, you pay for our services"
   },
-  "prices": {
-    "title": "Cost of services",
+  "benefits": {
+    "title": "Our advantages",
     "list": [
-      {
-        "title": "Salary up to {count_1}:",
-        "cost": "{cost_1} of salary"
-      },
-      {
-        "title": "Salary from {count_1} to {count_2}:",
-        "cost": "{cost_2} of salary"
-      },
-      {
-        "title": "Salary from {count_2} and above:",
-        "cost": "{cost_3} of salary"
-      }
-    ],
-    "discount": "discount: prepayment - {discount}%",
-    "guarantee": "guarantee: {count} months from the employee's start date",
-    "cta": "Submit an application"
+      "7 years of experience in finding staff for ourselves",
+      "We look at business globally",
+      "We create multilingual teams",
+      "We speak Russian, English, Español",
+      "We have 1000+ relevant resumes in our database",
+      "We develop our own community of HR specialists",
+      "We maintain a network of international connections"
+    ]
   }
 }

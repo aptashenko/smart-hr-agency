@@ -6,12 +6,6 @@
         <p class="the-hero__subtitle">{{$t('landing.hero.subtitle1')}}</p>
         <p class="the-hero__subtitle">{{$t('landing.hero.subtitle2')}}</p>
       </div>
-      <ul class="the-hero__list">
-        <li v-for="item of $tm('landing.hero.benefits')" class="the-hero__item">
-          <svg-icon name="check-circle" />
-          <p>{{item}}</p>
-        </li>
-      </ul>
       <div class="the-hero__actions">
         <base-button @click="handleCta">
           {{$t('landing.hero.cta2')}}
@@ -67,6 +61,8 @@ const handleCta = () => {
 
   &__subtitle {
     font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.6;
   }
 
   &__left {
@@ -95,28 +91,6 @@ const handleCta = () => {
     gap: 10px;
   }
 
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    list-style: none;
-    gap: 5px;
-  }
-
-  &__item {
-    display: flex;
-    align-items: start;
-    gap: 8px;
-
-    & svg {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-    }
-
-    & p {
-      font-size: 14px;
-    }
-  }
 }
 </style>
 

@@ -1,52 +1,54 @@
 <template>
   <div class="the-proposals">
-    <h2 class="the-proposals__maintitle">
-      {{$t('landing.proposals.title')}}
-    </h2>
-    <div class="the-proposals__list">
-      <div class="the-proposals__item">
-        <h2 class="the-proposals__title">
-          {{$t('landing.proposals.specialists.title')}}
-        </h2>
-        <hr/>
-        <p class="the-proposals__text">
-          {{$t('landing.proposals.specialists.description')}}
-        </p>
-        <hr/>
-        <base-button
-            tag="a"
-            :href="$t('footer.telegram_bot.link')"
-            target="_blank"
-            class="the-proposals__cta"
-        >
-          {{$t('landing.proposals.specialists.cta')}}
-        </base-button>
-      </div>
-      <div class="the-proposals__item">
-        <h2 class="the-proposals__title">
-          {{$t('landing.proposals.companies.title')}}
-        </h2>
-        <hr/>
-        <p class="the-proposals__text">
-          {{$t('landing.proposals.companies.description')}}
-        </p>
-        <hr/>
-        <base-button class="the-proposals__cta" @click="handleCta">
-          {{$t('landing.proposals.companies.cta')}}
-        </base-button>
-      </div>
-      <div class="the-proposals__item">
-        <h2 class="the-proposals__title">
-          {{$t('landing.proposals.partners.title')}}
-        </h2>
-        <hr/>
-        <p class="the-proposals__text">
-          {{$t('landing.proposals.partners.description')}}
-        </p>
-        <hr/>
-        <base-button class="the-proposals__cta" @click="handleCta">
-          {{$t('landing.proposals.partners.cta')}}
-        </base-button>
+    <div class="the-proposals__wrapper">
+      <h2 class="the-proposals__maintitle">
+        {{$t('landing.proposals.title')}}
+      </h2>
+      <div class="the-proposals__list">
+        <div class="the-proposals__item">
+          <h2 class="the-proposals__title">
+            {{$t('landing.proposals.specialists.title')}}
+          </h2>
+          <hr/>
+          <p class="the-proposals__text">
+            {{$t('landing.proposals.specialists.description')}}
+          </p>
+          <hr/>
+          <base-button
+              tag="a"
+              :href="$t('footer.telegram_bot.link')"
+              target="_blank"
+              class="the-proposals__cta"
+          >
+            {{$t('landing.proposals.specialists.cta')}}
+          </base-button>
+        </div>
+        <div class="the-proposals__item">
+          <h2 class="the-proposals__title">
+            {{$t('landing.proposals.companies.title')}}
+          </h2>
+          <hr/>
+          <p class="the-proposals__text">
+            {{$t('landing.proposals.companies.description')}}
+          </p>
+          <hr/>
+          <base-button class="the-proposals__cta" @click="handleCta">
+            {{$t('landing.proposals.companies.cta')}}
+          </base-button>
+        </div>
+        <div class="the-proposals__item">
+          <h2 class="the-proposals__title">
+            {{$t('landing.proposals.partners.title')}}
+          </h2>
+          <hr/>
+          <p class="the-proposals__text">
+            {{$t('landing.proposals.partners.description')}}
+          </p>
+          <hr/>
+          <base-button class="the-proposals__cta" @click="handleCta">
+            {{$t('landing.proposals.partners.cta')}}
+          </base-button>
+        </div>
       </div>
     </div>
   </div>
@@ -64,8 +66,12 @@ const handleCta = () => {
 
 <style lang="scss">
 .the-proposals {
-  @include container;
-  padding: 40px 20px;
+  background: $gray-50;
+  padding: 40px 0;
+
+  &__wrapper {
+    @include container;
+  }
 
   &__maintitle {
     font-size: 36px;
@@ -99,9 +105,10 @@ const handleCta = () => {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: $white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
     & hr {
       width: 100%;

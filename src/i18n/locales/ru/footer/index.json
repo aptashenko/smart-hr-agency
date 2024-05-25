@@ -1,5 +1,4 @@
 {
-  "title": "Обратная связь",
   "telegram_bot": {
     "name": "Оставить свои данные в базе кандидатов",
     "label": "SMPGMbot",
@@ -30,6 +29,5 @@
       "id": "threads",
       "link": "https://www.threads.net/@smarthr_agency"
     }
-  ],
-  "cta": "Отправить заявку"
+  ]
 }

@@ -1,42 +1,36 @@
 {
   "name": {
-    "label": "Your name",
+    "label": "What is your name?*",
     "validation": {
-      "minLength": "Name is too short!",
-      "maxLength": "Name is too long!",
-      "required": "Name is required"
+      "minLength": "The name is too short!",
+      "maxLength": "The name is too long!",
+      "required": "The name is required"
     }
   },
-  "surname": {
-    "label": "Your surname",
+  "request": {
+    "label": "Purpose of contact*",
+    "values": ["Find a job", "Find a specialist", "Partnership"],
     "validation": {
-      "minLength": "Surname is too short!",
-      "maxLength": "Surname is too long!",
-      "required": "Surname is required"
+      "required": "This field is required"
     }
   },
-  "position": {
-    "label": "Your position",
-    "validation": {
-      "minLength": "Position name is too short",
-      "maxLength": "Position name is too long",
-      "required": "Position is required"
-    }
+  "promo": {
+    "label": "Promo code"
   },
   "contact": {
-    "label": "Telegram contact",
+    "label": "Contact information*",
     "validation": {
       "minLength": "Too short",
       "maxLength": "Too long",
-      "required": "Contact is required"
+      "required": "Contact information is required"
     }
   },
   "message": {
     "label": "Describe your request",
     "validation": {
-      "minLength": "Description is too short",
-      "maxLength": "Description is too long",
-      "required": "Description is required"
+      "minLength": "The description is too short",
+      "maxLength": "The description is too long",
+      "required": "The description is required"
     }
   }
 }

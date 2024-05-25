@@ -1,5 +1,4 @@
 {
-  "title": "Contacto",
   "telegram_bot": {
     "name": "Quiero dejar mis datos en la base de candidatos",
     "label": "SMPGMbot",
@@ -30,6 +29,5 @@
       "id": "threads",
       "link": "https://www.threads.net/@smarthr_agency"
     }
-  ],
-  "cta": "Enviar la solicitud"
+  ]
 }

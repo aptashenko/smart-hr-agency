@@ -80,6 +80,10 @@ const errorMessage = computed(() => t(`inputs.${props.form.key}.validation.${pro
     display: flex;
     align-items: center;
     gap: 12px;
+
+    @media (max-width: 768px) {
+      gap: 4px;
+    }
   }
 
   &__item {
@@ -91,6 +95,10 @@ const errorMessage = computed(() => t(`inputs.${props.form.key}.validation.${pro
     padding: 5px;
     border: 1px solid transparent;
     border-radius: 8px;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
 
     &:hover {
       background: $white;

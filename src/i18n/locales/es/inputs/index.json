@@ -1,41 +1,35 @@
 {
   "name": {
-    "label": "Nombre",
+    "label": "¿Cuál es su nombre?*",
     "validation": {
       "minLength": "¡El nombre es demasiado corto!",
       "maxLength": "¡El nombre es demasiado largo!",
       "required": "El nombre es obligatorio"
     }
   },
-  "surname": {
-    "label": "Apellido",
+  "request": {
+    "label": "Propósito del contacto*",
+    "values": ["Encontrar trabajo", "Encontrar un especialista", "Asociación"],
     "validation": {
-      "minLength": "¡El apellido es demasiado corto!",
-      "maxLength": "¡El apellido es demasiado largo!",
-      "required": "El apellido es obligatorio"
+      "required": "Este campo es obligatorio"
     }
   },
-  "position": {
-    "label": "Cargo",
-    "validation": {
-      "minLength": "El cargo es demasiado corto",
-      "maxLength": "El cargo es demasiado largo",
-      "required": "El cargo es obligatorio"
-    }
+  "promo": {
+    "label": "Código promocional"
   },
   "contact": {
-    "label": "Contacto de Telegram",
+    "label": "Información de contacto*",
     "validation": {
       "minLength": "Demasiado corto",
       "maxLength": "Demasiado largo",
-      "required": "El contacto es obligatorio"
+      "required": "La información de contacto es obligatoria"
     }
   },
   "message": {
-    "label": "Describe tu solicitud",
+    "label": "Describa su solicitud",
     "validation": {
-      "minLength": "Descripción demasiado corta",
-      "maxLength": "Descripción demasiado larga",
+      "minLength": "La descripción es demasiado corta",
+      "maxLength": "La descripción es demasiado larga",
       "required": "La descripción es obligatoria"
     }
   }
