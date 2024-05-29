@@ -66,7 +66,6 @@ const handleCta = () => {
 
 <style lang="scss">
 .the-proposals {
-  background: $gray-50;
   padding: 40px 0;
 
   &__wrapper {

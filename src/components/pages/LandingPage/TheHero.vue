@@ -6,18 +6,29 @@
         <p class="the-hero__subtitle">{{$t('landing.hero.subtitle1')}}</p>
         <p class="the-hero__subtitle">{{$t('landing.hero.subtitle2')}}</p>
       </div>
+      <ul class="the-hero__list">
+        <li
+          v-for="item of $tm('landing.benefits.list')"
+          class="the-hero__item">
+          <svg-icon name="check-circle" />
+          <p>{{item}}</p>
+        </li>
+      </ul>
       <div class="the-hero__actions">
         <base-button @click="handleCta">
           {{$t('landing.hero.cta2')}}
         </base-button>
-        <base-button href="#areas" variant="inverse" tag="a">
+        <base-button
+          href="#areas"
+          variant="inverse"
+          tag="a">
           {{ $t('landing.hero.cta1') }}
         </base-button>
       </div>
     </div>
     <base-image
-        :src="{name: 'content1.png', dir: 'landing-page'}"
-        class="the-hero__image"
+      :src="{name: 'content1.png', dir: 'landing-page'}"
+      class="the-hero__image"
     />
   </div>
 </template>
@@ -89,6 +100,29 @@ const handleCta = () => {
     display: flex;
     align-items: center;
     gap: 10px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    list-style: none;
+    gap: 5px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+
+    & svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    & p {
+      font-size: 14px;
+    }
   }
 
 }

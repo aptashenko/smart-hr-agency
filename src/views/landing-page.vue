@@ -2,7 +2,6 @@
   <div class="landing-page">
     <the-hero />
     <the-work-areas id="areas" />
-    <the-benefits />
     <the-proposals id="coop" />
     <how-we-work id="steps" />
     <banner-form />

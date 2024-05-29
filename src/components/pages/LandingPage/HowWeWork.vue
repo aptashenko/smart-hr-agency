@@ -1,61 +1,63 @@
 <template>
   <div class="how-we-work">
-    <h2 class="how-we-work__title">
-      {{$t('landing.how_we_work.title')}}
-    </h2>
-    <div class="how-we-work__grid">
-      <div data-order="1" class="how-we-work__card">
-        <div class="how-we-work__number">
-          <h2>1</h2>
+    <div class="how-we-work__wrapper">
+      <h2 class="how-we-work__title">
+        {{$t('landing.how_we_work.title')}}
+      </h2>
+      <div class="how-we-work__grid">
+        <div data-order="1" class="how-we-work__card">
+          <div class="how-we-work__number">
+            <h2>1</h2>
+          </div>
+          <div class="how-we-work__text">
+            <p>
+              {{$t('landing.how_we_work.step1')}}
+            </p>
+          </div>
         </div>
-        <div class="how-we-work__text">
-          <p>
-            {{$t('landing.how_we_work.step1')}}
-          </p>
+        <div />
+        <div data-order="3" class="how-we-work__card">
+          <div class="how-we-work__number">
+            <h2>3</h2>
+          </div>
+          <div class="how-we-work__text">
+            <p>
+              {{$t('landing.how_we_work.step3')}}
+            </p>
+          </div>
         </div>
-      </div>
-      <div />
-      <div data-order="3" class="how-we-work__card">
-        <div class="how-we-work__number">
-          <h2>3</h2>
+        <div />
+        <div data-order="5" class="how-we-work__card">
+          <div class="how-we-work__number">
+            <h2>5</h2>
+          </div>
+          <div class="how-we-work__text">
+            <p>
+              {{$t('landing.how_we_work.step5')}}
+            </p>
+          </div>
         </div>
-        <div class="how-we-work__text">
-          <p>
-            {{$t('landing.how_we_work.step3')}}
-          </p>
+        <div />
+        <div data-order="2" class="how-we-work__card">
+          <div class="how-we-work__number">
+            <h2>2</h2>
+          </div>
+          <div class="how-we-work__text">
+            <p>
+              {{$t('landing.how_we_work.step2')}}
+            </p>
+          </div>
         </div>
-      </div>
-      <div />
-      <div data-order="5" class="how-we-work__card">
-        <div class="how-we-work__number">
-          <h2>5</h2>
-        </div>
-        <div class="how-we-work__text">
-          <p>
-            {{$t('landing.how_we_work.step5')}}
-          </p>
-        </div>
-      </div>
-      <div />
-      <div data-order="2" class="how-we-work__card">
-        <div class="how-we-work__number">
-          <h2>2</h2>
-        </div>
-        <div class="how-we-work__text">
-          <p>
-            {{$t('landing.how_we_work.step2')}}
-          </p>
-        </div>
-      </div>
-      <div />
-      <div data-order="4" class="how-we-work__card">
-        <div class="how-we-work__number">
-          <h2>4</h2>
-        </div>
-        <div class="how-we-work__text">
-          <p>
-            {{$t('landing.how_we_work.step4')}}
-          </p>
+        <div />
+        <div data-order="4" class="how-we-work__card">
+          <div class="how-we-work__number">
+            <h2>4</h2>
+          </div>
+          <div class="how-we-work__text">
+            <p>
+              {{$t('landing.how_we_work.step4')}}
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -66,8 +68,12 @@
 
 <style lang="scss">
 .how-we-work {
-  @include container;
+  background: $gray-50;
   padding: 40px 20px;
+
+  &__wrapper {
+    @include container;
+  }
 
   &__title {
     font-size: 36px;

@@ -30,7 +30,6 @@ const { onSubmit } = useSendOrder()
 
 <style lang="scss">
 .banner-form {
-  background: $gray-50;
   padding: 40px 0;
 
   &__wrapper {
