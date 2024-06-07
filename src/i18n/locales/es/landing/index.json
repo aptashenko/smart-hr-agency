@@ -36,6 +36,11 @@
       "list": ["PHP", "Python", "JS", "Node.JS", "React"]
     },
 
+    "it_personal": {
+      "title": "Especialistas en TI",
+      "list": ["Project Manager", "AQA/QA Engineer", "Data Analyst", "DevOps", "AI Engineer"]
+    },
+
     "digit_marketing": {
       "title": "Digital & Performance Marketing",
       "list": ["User Acquisition", "SMM"]

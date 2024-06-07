@@ -63,6 +63,17 @@
             </li>
           </ul>
         </div>
+        <div class="the-work-areas__card">
+          <h3 class="the-work-areas__label">
+            {{$t('landing.work_areas.it_personal.title')}}
+          </h3>
+          <ul class="the-work-areas__list">
+            <li v-for="item of $tm('landing.work_areas.it_personal.list')" class="the-work-areas__item">
+              <svg-icon name="check-circle" />
+              <p>{{item}}</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
