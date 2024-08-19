@@ -1,6 +1,12 @@
 <template>
   <footer class="the-footer">
     <div class="the-footer__wrapper">
+      <div class="the-footer__info">
+       <p>A Better Career OÜ</p>
+       <p>Reg number: 17035965</p>
+       <p>VAT ID: EE102763229</p>
+       <p>Address: Harju maakond, Tallinn, Lasnamäe linnaosa, Kivila tn 21-101, 13918</p>
+      </div>
       <div class="the-footer__contacts">
         <ul class="the-footer__social">
           <li v-for="item of $tm('footer.socials')">
@@ -52,7 +58,28 @@
   &__wrapper {
     @include container;
     gap: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 24px;
+
+   @media (max-width: 768px) {
+    flex-direction: column;
+   }
   }
+
+ &__info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+  @media (max-width: 768px) {
+    & p {
+     text-align: center;
+     width: 100%;
+    }
+  }
+ }
 
   &__contacts {
     display: flex;
@@ -60,10 +87,6 @@
     align-items: flex-end;
     justify-content: flex-end;
     gap: 8px;
-
-    @media (max-width: 768px) {
-      margin-top: 60px;
-    }
   }
 
   &__telegram-bot {
